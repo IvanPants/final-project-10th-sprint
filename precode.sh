@@ -21,7 +21,7 @@ touch dir2/empty
 # #!/bin/bash
 # echo "$1, привет!"
 
-echo -e '#!/bin/bash\n\necho "$1, привет!"' > task/dir2/hello.sh
+echo -e "#!/bin/bash\necho \"\$1, привет!\"" > dir2/hello.sh
 
 # устанавливаем для task/dir2/hello.sh права rwxrw-r--
 
@@ -51,7 +51,7 @@ export NAME="Всем студентам"
 # запускаем task/dir2/hello.sh с переменной окружения NAME в качестве аргумента
 # вывод скрипта должен дописаться в файл task/dir1/summary.txt
 
-./dir2/hello.sh "$NAME" >> dir1/summary.txt
+dir2/hello.sh "$NAME" >> dir1/summary.txt
 
 # перемещаем с переименованием task/dir1/summary.txt в task/Практическое задание
 
